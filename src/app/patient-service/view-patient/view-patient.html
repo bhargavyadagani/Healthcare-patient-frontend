@@ -1,0 +1,48 @@
+<p>view-patient works!</p>
+
+<h2>Patient List</h2>
+<div *ngIf="isLoading">Loading patients...</div>
+<div *ngIf="!isLoading && patients.length === 0">No patients found.</div>
+
+<table *ngIf="!isLoading && patients.length > 0" border="1" cellpadding="10">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Gender</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Insurance Provider</th>
+      <th>Insurance Number</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.id }}</td>
+      <td>{{ patient.firstName }}</td>
+      <td>{{ patient.lastName }}</td>
+      <td>{{ patient.gender }}</td>
+      <td>{{ patient.email }}</td>
+      <td>{{ patient.phone }}</td>
+      <td>{{ patient.insuranceProvider }}</td>
+      <td>{{ patient.insuranceNumber }}</td>
+      <td>
+        <button (click)="editPatient(patient.id)">Edit</button>
+        <button (click)="deletePatient(patient.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+
+
+<a href="add-patient" class="btn btn-success">
+  ➕ Add New Patient
+</a>
+
+
+

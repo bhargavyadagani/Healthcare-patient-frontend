@@ -1,0 +1,30 @@
+<p>edit-patient works!</p>
+
+<h2>Edit Patient</h2>
+<form #patientForm="ngForm" (ngSubmit)="onSubmit()">
+
+  <label>First Name</label>
+  <input type="text" name="firstName" [(ngModel)]="patient.firstName"><br>
+
+  <label>Last Name</label>
+  <input type="text" name="lastName" [(ngModel)]="patient.lastName"><br>
+
+  <label>Gender</label>
+  <input type="text" name="gender" [(ngModel)]="patient.gender"><br>
+
+  <label>Email</label>
+  <input type="email" name="email" [(ngModel)]="patient.email"><br>
+
+  <label>Phone</label>
+  <input type="text" name="phone" [(ngModel)]="patient.phone"><br>
+
+  <label>Insurance Provider</label>
+  <input type="text" name="insuranceProvider" [(ngModel)]="patient.insuranceProvider"><br>
+
+  <label>Insurance Number</label>
+  <input type="text" name="insuranceNumber" [(ngModel)]="patient.insuranceNumber"><br>
+
+  <br><br>
+  <button type="submit">Update</button> &nbsp;&nbsp;
+  <button type="reset">Reset</button>
+</form>
